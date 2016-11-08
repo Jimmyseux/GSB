@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 /** 
  * Classe d'accès aux données. 
@@ -385,13 +384,6 @@ class PdoGsb{
             return $ligne['nb'];
 
         }
-        public function getLesTablettes(){
-        $req = "select refvisiteur, numtablette, typeT, capaciteI, capaciteE from tablette";
-        $stmt = PdoGsb::$monPdo->prepare($req);
-                $stmt->execute();
-        $lesTab = $stmt->fetchAll();
-        return $lesTab;
-    }
 }
 =======
 ﻿<?php
