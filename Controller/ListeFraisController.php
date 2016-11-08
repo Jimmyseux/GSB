@@ -21,7 +21,6 @@ class ListeFraisController extends Controller
             $lesCles = array_keys( $lesMois );
             $moisASelectionner = $lesCles[0];
             return $this->render('PgGsbFraisBundle:ListeFrais:listemois.html.twig',
-                array('lesmois'=>$lesMois,'lesmois'=>$moisASelectionner));
                 array('lesmois'=>$lesMois,'lemois'=>$moisASelectionner));
         }
         else{
