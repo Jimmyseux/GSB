@@ -1,3 +1,5 @@
+# Penser à changer le nom de la base de données.
+
 parameters:
     db.host: mysql:host=localhost
     db.name: dbname=bd_gsb

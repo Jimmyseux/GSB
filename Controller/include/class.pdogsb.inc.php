@@ -14,7 +14,9 @@
  * @version    1.0
  * @link       http://www.php.net/manual/fr/book.pdo.php
  */
-
+/*
+Penser à modifier le nom de la base de données
+*/
 class PdoGsb{   		
       	private static $serveur='mysql:host=localhost';
       	private static $bdd='dbname=bd_gsb';   		
