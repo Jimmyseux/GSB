@@ -1,6 +1,6 @@
 parameters:
     db.host: mysql:host=localhost
-    db.name: dbname=gsb
+    db.name: dbname=gsbtp2
     db.user: root
     db.mdp: root
 services:

@@ -371,14 +371,5 @@ class PdoGsb{
             return $ligne['nb'];
 
         }
-
-         public function getTablettes(){
-        $req = "select tablette.refvisiteur as visiteur, tablette.numtablette as numTablette, tablette.typeT as typeT, tablette.capaciteI as capaciteI, tablette.capaciteE as capaciteE from tablette";
-        $stmt = PdoGsb::$monPdo->prepare($req);
-                $stmt->execute();
-        $lesTab = $stmt->fetchAll();
-        return $lesTab;
-    }
 }
 ?>
-

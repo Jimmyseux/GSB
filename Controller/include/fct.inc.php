@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /** 
  * Fonctions pour l'application GSB
  

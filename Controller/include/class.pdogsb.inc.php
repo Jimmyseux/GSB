@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /** 
  * Classe d'accès aux données. 
  
@@ -17,9 +17,9 @@
 
 class PdoGsb{   		
       	private static $serveur='mysql:host=localhost';
-      	private static $bdd='dbname=bd_gsb';   		
+      	private static $bdd='dbname=gsbtp2';   		
       	private static $user='root' ;    		
-      	private static $mdp='' ;	
+      	private static $mdp='root' ;	
 	private static $monPdo;
 	private static $monPdoGsb=null;
 /**
