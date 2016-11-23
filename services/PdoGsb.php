@@ -382,8 +382,8 @@ class PdoGsb{
 
         public function getLesAffectationsTablettes($visiteur)
         {
-            $req = "select dateAffectation, numtablette, typeT, capaciteI, capaciteE  from tablette
-                    from tablette where visiteur.visiteur = '".($visiteur)."'";  
+            $req = "select tablette.dateAffectation as dateAffectation, tablette.numtablette as numTablette, tablette.typeT as typeT, tablette.capaciteI as capaciteI, tablette.capaciteE as capaciteE
+                    from tablette, visiteur where visiteur.id = '".($visiteur)."' ";  
             $stmt = PdoGsb::$monPdo->prepare($req);
             $stmt->execute();
             $lesAffec = $stmt->fetchAll();
