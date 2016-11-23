@@ -19,6 +19,9 @@ pg_gsb_frais_validerfraishorsforfais:
 pg_gsb_frais_supprimerfraishorsforfait:
     pattern:  /supprimerfraishorsforfait/{id}
     defaults: { _controller: PgGsbFraisBundle:SaisirFrais:supprimerfraishorsforfait }
+pg_gsb_frais_listeutilisateur:
+    pattern: /historique-utilisateur
+    defaults: { _controller: PgGsbFraisBundle:Tablettes:listeVisiteur }
 pg_gsb_frais_affectationtablette:
-    pattern: /historique
+    pattern: /historique-tablette
     defaults: { _controller: PgGsbFraisBundle:Tablettes:listeTablette }

@@ -1,0 +1,50 @@
+{% extends "PgGsbFraisBundle::layout.html.twig" %}
+{% block menu %}
+<div id="menuGauche">
+     <div id="infosUtil">
+         <h3>
+            {%if(app.session.get('nom') is defined )%}
+                           DAF: Bonjour {{app.session.get('nom')}}<br>   
+            {%endif%}
+        </h3>
+     </div>  
+        <ul id="menuList">
+
+	   <li class="smenu">
+              <a href="{{path('pg_gsb_frais_listeutilisateur')}}" title="Historique des tablettes">Historique des tablettes</a>
+          
+	   </li><li class="smenu">
+
+	   <li class="smenu">
+              <a href="index.php?uc=validerFrais&action=voirFrais" title="valider les frais">Valider les frais</a>
+           </li>
+	  
+              <a href="{{path('pg_gsb_frais_deconnexion')}}" title="Se déconnecter">Déconnexion</a>
+           </li>
+         </ul>
+     </div> 
+{% endblock%}
+
+{% block body %}
+	<div id="contenu">
+	      <h2>Historique des tablettes</h2>
+		<tr>		
+           	    <th>Date Affectation </th><th>Numéro tablette </th> <th>Type tablette </th><th>Capacité interne </th><th>Capacité externe 	
+		    </th>
+	       	</tr>
+		<form action="{{path('pg_gsb_frais_affectationtablette')}}" method="POST">
+		          <div class="corpsForm">
+		              <fieldset>
+                		<table border="1" width="0%">
+	
+						{% for t in tablette %}
+	
+					<li>{{t.dateAffectation}} {{t.numTablette}} {{t.typeT}} {{t.capaciteI}} {{t.capaciteE}}</li>
+						{% endfor %}
+	 			</fieldset>
+			  </div>	
+                    
+            
+	
+{% endblock %}
+

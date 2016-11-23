@@ -13,13 +13,14 @@ class TablettesController extends Controller
     {
     	$pdo = $this->get('pg_gsb_frais.pdo');
     	$visiteur = $pdo->getLesVisiteurs();
-    	return $this->render('PgGsbFraisBundle:Tablettes:tablettes.html.twig',array("liste"=>$lesAffec));
+    	return $this->render('PgGsbFraisBundle:Tablettes:listeutilisateurs.html.twig',array("visiteurs"=>$visiteur));
     }
     public function listeTabletteAction()
     {
-    	$visiteur = 'a17';
+
+    	$visiteur = $_POST["liste visiteurs"];
     	$pdo = $this->get('pg_gsb_frais.pdo');
     	$affectationTab = $pdo->getLesAffectationsTablettes($visiteur);
-    	return $this->render('PgGsbFraisBundle:Tablettes:tablettes.html.twig',array("tablette"=>$affectationTab));
+    	return $this->render('PgGsbFraisBundle:Tablettes:listetablettes.html.twig',array("tablette"=>$affectationTab));
     }
 }

@@ -373,7 +373,7 @@ class PdoGsb{
         }
 
         public function getLesVisiteurs() {
-            $req = "select * from visiteur";
+            $req = "select visiteur.id as id, visiteur.nom as nom, visiteur.prenom as prenom from visiteur";
             $stmt = PdoGsb::$monPdo->prepare($req);
             $stmt->execute();
             $visiteur = $stmt->fetchAll();
@@ -383,7 +383,7 @@ class PdoGsb{
         public function getLesAffectationsTablettes($visiteur)
         {
             $req = "select tablette.dateAffectation as dateAffectation, tablette.numtablette as numTablette, tablette.typeT as typeT, tablette.capaciteI as capaciteI, tablette.capaciteE as capaciteE
-                    from tablette, visiteur where visiteur.id = '".($visiteur)."' ";  
+                    from tablette where tablette.refvisiteur = '".($visiteur)."' ";  
             $stmt = PdoGsb::$monPdo->prepare($req);
             $stmt->execute();
             $lesAffec = $stmt->fetchAll();
