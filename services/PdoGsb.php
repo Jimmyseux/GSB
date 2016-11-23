@@ -371,5 +371,26 @@ class PdoGsb{
             return $ligne['nb'];
 
         }
+
+        public function getLesVisiteurs() {
+            $req = "select * from visiteur";
+            $stmt = PdoGsb::$monPdo->prepare($req);
+            $stmt->execute();
+            $visiteur = $stmt->fetchAll();
+            return $visiteur;
+        }
+
+        public function getLesAffectationsTablettes($visiteur)
+        {
+            $req = "select dateAffectation, numtablette, typeT, capaciteI, capaciteE  from tablette
+                    from tablette where visiteur.visiteur = '".($visiteur)."'";  
+            $stmt = PdoGsb::$monPdo->prepare($req);
+            $stmt->execute();
+            $lesAffec = $stmt->fetchAll();
+            return $lesAffec; 
+        }
 }
+
+
+
 ?>
