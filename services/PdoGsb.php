@@ -380,10 +380,9 @@ class PdoGsb{
             return $visiteur;
         }
 
-        public function getLesAffectationsTablettes($visiteur)
+        public function getLesAffectationsTablettes()
         {
-            $req = "select tablette.dateAffectation as dateAffectation, tablette.numtablette as numTablette, tablette.typeT as typeT, tablette.capaciteI as capaciteI, tablette.capaciteE as capaciteE
-                    from tablette where tablette.refvisiteur = '".($visiteur)."' ";  
+            $req = "select * from tablette order by dateAffectation";  
             $stmt = PdoGsb::$monPdo->prepare($req);
             $stmt->execute();
             $lesAffec = $stmt->fetchAll();

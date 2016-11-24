@@ -26,13 +26,14 @@
 {% block body %}
 <div id="contenu">
       <h2> Visiteurs</h2>
-	<form action="{{path('pg_gsb_frais_listeutilisateur')}}" method="POST">
-       <select name="liste visiteurs">
+	<form action="{{path('pg_gsb_frais_affectationtablette')}}">
+       <select name="liste">
 	{% for visiteur in visiteurs %}
 	<option value="{{visiteur.id}}">{{visiteur.nom}} {{visiteur.prenom}}</option>
 	{% endfor %}
 	</select>
-	<input type="button" value="Valider"/>
+	<input type="submit" value="Valider"/>
+	</form>
 </div>
 
 

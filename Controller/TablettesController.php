@@ -18,9 +18,8 @@ class TablettesController extends Controller
     public function listeTabletteAction()
     {
 
-    	$visiteur = $_POST["liste visiteurs"];
     	$pdo = $this->get('pg_gsb_frais.pdo');
-    	$affectationTab = $pdo->getLesAffectationsTablettes($visiteur);
+    	$affectationTab = $pdo->getLesAffectationsTablettes();
     	return $this->render('PgGsbFraisBundle:Tablettes:listetablettes.html.twig',array("tablette"=>$affectationTab));
     }
 }
